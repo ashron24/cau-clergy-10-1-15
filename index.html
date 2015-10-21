@@ -715,6 +715,10 @@ var nycha = cartodb.createLayer(map_object, {
           var l_nails = new L.LayerGroup();
           nails.addTo(l_nails);
 
+  var fema = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/f27f2b54-783b-11e5-a19a-0e787de82d45/viz.json');
+          var l_fema = new L.LayerGroup();
+          fema.addTo(l_fema);
+          
   var vision_zero = cartodb.createLayer(map_object, 'https://ashron24.cartodb.com/api/v2/viz/5f2fe1a8-2f12-11e5-8b7e-0e0c41326911/viz.json');
           var l_vision_zero = new L.LayerGroup();
           vision_zero.addTo(l_vision_zero);
@@ -1141,6 +1145,7 @@ map_object.addLayer(l_neigh_labels);
                             "Rezoning Areas": l_rezoning,
                             "Paid Sick Leave Business Walks": l_paid_sick,
                             "Nail Salon Day of Action Targets": l_nails,
+                            "FEMA Flood Zones": l_fema,
                             "Vision Zero Borough Plans": l_vision_zero,
                             "Voters by Election District": l_voters_by_ed
                             }
