@@ -3,7 +3,7 @@
     <head>
         <title>
 
-            CAU Outreach Map | DRAFT | update:10/15/15
+            CAU Clergy Map | DRAFT | update:10/13/15
 
         </title>
 
@@ -597,27 +597,7 @@ var library = cartodb.createLayer(map_object, {
           cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['facname', 'facaddress', 'facility_t', 'group_type', 'subgroup_t', 'capacity', 'capacity_t', 'agency_ope', 'agency_ove'])
          });
 
-
-
-
 var fac = cartodb.createLayer(map_object, {
-                    user_name: 'ashron2224',
-                    type: 'cartodb',
-                    sublayers: [{
-                      sql: "SELECT cartodb_id, the_geom_webmercator, facname, facaddress, facility_t, group_type, subgroup_t, capacity, capacity_t, agency_ope, agency_ove, factype FROM fac15 ",
-                      cartocss: "#layer [factype=4501][zoom >= 10] {marker-width: 6;marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/20150707192143Swimming_silhouette_32.png); marker-line-color: #FFFFFF; marker-placement: point; marker-type: ellipse;  marker-allow-overlap: true; }  #layer  [factype=4501][zoom >= 11] { marker-width: 9; } #layer [factype=4501][zoom >= 12]{marker-width: 12; } #layer   [factype=4501][zoom >= 13]{   marker-width: 18; } #layer   [factype=4501][zoom >= 15]{ marker-width: 24; }",
-                      interactivity: "cartodb_id"}]
-                  });
-    var l_fac = new L.LayerGroup();
-    fac.addTo(l_fac)
-          .on('done', function(layer) {
-          cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['facname', 'facaddress', 'capacity', 'capacity_t', 'agency_ope', 'agency_ove'])
-         });
-
-
-
-/* Old Senior Center Layer
-
                     user_name: 'ashron24',
                     type: 'cartodb',
                     sublayers: [{
@@ -631,8 +611,6 @@ var fac = cartodb.createLayer(map_object, {
           cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), [ 'name', 'cartodb_id'])
          });
 
-*/
-
 var christian = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/f58781ea-570a-11e5-b973-0e4fddd5de28/viz.json');
     var l_christian = new L.LayerGroup();
     christian.addTo(l_christian);
@@ -645,97 +623,67 @@ var muslim = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/ash
     var l_muslim = new L.LayerGroup();
     muslim.addTo(l_muslim);
 
-var buddhist = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/2d984334-7903-11e5-8ed6-0e3ff518bd15/viz.json');
-    var l_buddhist = new L.LayerGroup();
-    buddhist.addTo(l_buddhist);
-
-var hindu = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/ac362694-7902-11e5-98ad-0ea31932ec1d/viz.json');
-    var l_hindu = new L.LayerGroup();
-    hindu.addTo(l_hindu);
-
-var sikh = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/b9496cdc-7903-11e5-98ad-0ea31932ec1d/viz.json');
-    var l_sikh = new L.LayerGroup();
-    sikh.addTo(l_sikh);
-
-var krishna = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/79e174cc-7903-11e5-a7e3-0ecd1babdde5/viz.json');
-    var l_krishna = new L.LayerGroup();
-    krishna.addTo(l_krishna);
-
-var other_religion = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/9b248cfe-7904-11e5-8f63-0e31c9be1b51/viz.json');
-    var l_other_religion = new L.LayerGroup();
-    other_religion.addTo(l_other_religion);    
-
-
-
-/* old minor religions layers
-
-
-
 var buddhist = cartodb.createLayer(map_object, {
-                    user_name: 'ashron2224',
+                    user_name: 'ashron24',
                     type: 'cartodb',
                     sublayers: [{
-                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15",
-                      cartocss: "#layer [zoom >=10][religion='Buddhist'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119270050-px-orange-dharma_wheel_2.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15 [zoom >= 11][religion='Buddhist'] {    marker-width: 8; } #haroldclergy3_11_15 [zoom >= 12][religion='Buddhist'] {    marker-width: 12; } #haroldclergy3_11_15 [zoom >= 13][religion='Buddhist'] {    marker-width: 18; } #haroldclergy3_11_15 [zoom >= 14][religion='Buddhist'] {    marker-width: 24; } #haroldclergy3_11_15 [zoom >= 15][religion='Buddhist'] {    marker-width: 30; } ",
+                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15_merge",
+                      cartocss: "#layer [zoom >=10][religion='Buddhist'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119270050-px-orange-dharma_wheel_2.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15_merge [zoom >= 11][religion='Buddhist'] {    marker-width: 8; } #haroldclergy3_11_15_merge [zoom >= 12][religion='Buddhist'] {    marker-width: 12; } #haroldclergy3_11_15_merge [zoom >= 13][religion='Buddhist'] {    marker-width: 18; } #haroldclergy3_11_15_merge [zoom >= 14][religion='Buddhist'] {    marker-width: 24; } #haroldclergy3_11_15_merge [zoom >= 15][religion='Buddhist'] {    marker-width: 30; } ",
                       interactivity: "cartodb_id"}]
                   });
     var l_buddhist = new L.LayerGroup();
     buddhist.addTo(l_buddhist);
 
 var hindu = cartodb.createLayer(map_object, {
-                    user_name: 'ashron2224',
+                    user_name: 'ashron24',
                     type: 'cartodb',
                     sublayers: [{
-                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15",
-                      cartocss: "#layer [zoom >= 10][religion='Hindu'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119272950-pixel-Om.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15 [zoom >= 11][religion='Hindu'] {    marker-width: 8; } #haroldclergy3_11_15 [zoom >= 12][religion='Hindu'] {    marker-width: 12; } #haroldclergy3_11_15 [zoom >= 13][religion='Hindu'] {    marker-width: 18; } #haroldclergy3_11_15 [zoom >= 14][religion='Hindu'] {    marker-width: 24; } #haroldclergy3_11_15 [zoom >= 15] [religion='Hindu'] {  marker-width: 30; } ",
+                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15_merge",
+                      cartocss: "#layer [zoom >= 10][religion='Hindu'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119272950-pixel-Om.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15_merge [zoom >= 11][religion='Hindu'] {    marker-width: 8; } #haroldclergy3_11_15_merge [zoom >= 12][religion='Hindu'] {    marker-width: 12; } #haroldclergy3_11_15_merge [zoom >= 13][religion='Hindu'] {    marker-width: 18; } #haroldclergy3_11_15_merge [zoom >= 14][religion='Hindu'] {    marker-width: 24; } #haroldclergy3_11_15_merge [zoom >= 15] [religion='Hindu'] {  marker-width: 30; } ",
                       interactivity: "cartodb_id"}]
                   });
     var l_hindu = new L.LayerGroup();
     hindu.addTo(l_hindu);
 
 var sikh = cartodb.createLayer(map_object, {
-                    user_name: 'ashron2224',
+                    user_name: 'ashron24',
                     type: 'cartodb',
                     sublayers: [{
-                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15",
-                      cartocss: "#layer [zoom >= 10][religion='Sikh'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119271550-px-yellow-Khanda.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }   #haroldclergy3_11_15 [zoom >= 11][religion='Sikh'] {    marker-width: 8; } #haroldclergy3_11_15 [zoom >= 12][religion='Sikh'] {    marker-width: 12; } #haroldclergy3_11_15 [zoom >= 13][religion='Sikh'] {    marker-width: 18; } #haroldclergy3_11_15 [zoom >= 14][religion='Sikh'] {    marker-width: 24; } #haroldclergy3_11_15 [zoom >= 15][religion='Sikh'] {    marker-width: 30; } ",
+                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15_merge",
+                      cartocss: "#layer [zoom >= 10][religion='Sikh'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119271550-px-yellow-Khanda.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }   #haroldclergy3_11_15_merge [zoom >= 11][religion='Sikh'] {    marker-width: 8; } #haroldclergy3_11_15_merge [zoom >= 12][religion='Sikh'] {    marker-width: 12; } #haroldclergy3_11_15_merge [zoom >= 13][religion='Sikh'] {    marker-width: 18; } #haroldclergy3_11_15_merge [zoom >= 14][religion='Sikh'] {    marker-width: 24; } #haroldclergy3_11_15_merge [zoom >= 15][religion='Sikh'] {    marker-width: 30; } ",
                       interactivity: "cartodb_id"}]
                   });
     var l_sikh = new L.LayerGroup();
     sikh.addTo(l_sikh);
 
 var krishna = cartodb.createLayer(map_object, {
-                    user_name: 'ashron2224',
+                    user_name: 'ashron24',
                     type: 'cartodb',
                     sublayers: [{
-                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15",
-                      cartocss: "#layer [zoom >= 10][religion='Hare Krishna'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/20150707172351lotus50px.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15  #haroldclergy3_11_15 [zoom >= 11][religion='Hare Krishna'] {    marker-width: 8; } #haroldclergy3_11_15 [zoom >= 12][religion='Hare Krishna'] {    marker-width: 12; } #haroldclergy3_11_15 [zoom >= 13][religion='Hare Krishna'] {    marker-width: 18; } #haroldclergy3_11_15 [zoom >= 14][religion='Hare Krishna'] {    marker-width: 24; } #haroldclergy3_11_15 [zoom >= 15][religion='Hare Krishna'] {    marker-width: 30; } ",
+                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15_merge",
+                      cartocss: "#layer [zoom >= 10][religion='Hare Krishna'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/20150707172351lotus50px.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15_merge  #haroldclergy3_11_15_merge [zoom >= 11][religion='Hare Krishna'] {    marker-width: 8; } #haroldclergy3_11_15_merge [zoom >= 12][religion='Hare Krishna'] {    marker-width: 12; } #haroldclergy3_11_15_merge [zoom >= 13][religion='Hare Krishna'] {    marker-width: 18; } #haroldclergy3_11_15_merge [zoom >= 14][religion='Hare Krishna'] {    marker-width: 24; } #haroldclergy3_11_15_merge [zoom >= 15][religion='Hare Krishna'] {    marker-width: 30; } ",
                       interactivity: "cartodb_id"}]
                   });
     var l_krishna = new L.LayerGroup();
     krishna.addTo(l_krishna);
 
 var other_religion = cartodb.createLayer(map_object, {
-                    user_name: 'ashron2224',
+                    user_name: 'ashron24',
                     type: 'cartodb',
                     sublayers: [{
-                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15",
-                      cartocss: "#layer [zoom >= 10][religion=''] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031200010650-px-domed_building.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 5;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 1;    marker-allow-overlap: true; }  #haroldclergy3_11_15 [zoom >= 11][religion=''] {    marker-width: 8; } #haroldclergy3_11_15 [zoom >= 12][religion=''] {    marker-width: 12; } #haroldclergy3_11_15 [zoom >= 13][religion=''] {    marker-width: 18; } #haroldclergy3_11_15 [zoom >= 14][religion=''] {    marker-width: 24; } #haroldclergy3_11_15 [zoom >= 15][religion=''] {    marker-width: 30; } ",
+                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15_merge",
+                      cartocss: "#layer [zoom >= 10][religion=''] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031200010650-px-domed_building.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 5;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 1;    marker-allow-overlap: true; }  #haroldclergy3_11_15_merge [zoom >= 11][religion=''] {    marker-width: 8; } #haroldclergy3_11_15_merge [zoom >= 12][religion=''] {    marker-width: 12; } #haroldclergy3_11_15_merge [zoom >= 13][religion=''] {    marker-width: 18; } #haroldclergy3_11_15_merge [zoom >= 14][religion=''] {    marker-width: 24; } #haroldclergy3_11_15_merge [zoom >= 15][religion=''] {    marker-width: 30; } ",
                       interactivity: "cartodb_id"}]
                   });
     var l_other_religion = new L.LayerGroup();
     other_religion.addTo(l_other_religion);
-
-
-*/
-
 
 var nycha = cartodb.createLayer(map_object, {
             user_name: 'andrewmartini',
             type: 'cartodb',
             sublayers: [{
                sql: 'SELECT * FROM nycha_developments_july2011',
-               cartocss: "#layer{    polygon-fill: #0700ff;    polygon-opacity: 0.7;    line-color: #FFF;    line-width: 0;    line-opacity: 0;  }    #nycha_developments_july2011::labels [zoom >= 12] [tot_pop11 > 4000] {    text-name: [developmen];    text-face-name: 'Lato Bold';    text-size: 10;    text-label-position-tolerance: 10;    text-fill: #11002F;    text-halo-fill: #FFF;    text-halo-radius: 1;    text-dy: 0;    text-wrap-width: 120;    text-wrap-before: true;    text-character-spacing: 1.5;    text-allow-overlap: false;    text-placement: point;    text-placement-type: simple;    }    #nycha_developments_july2011::labels [zoom >= 13] [tot_pop11 > 1000] {    text-name: [developmen];    text-face-name: 'DejaVu Sans Book';    text-size: 10;    text-label-position-tolerance: 10;    text-fill: #000;    text-halo-fill: #FFF;    text-halo-radius: 1;    text-dy: 0;    text-wrap-width: 150;    text-wrap-before: true;    text-character-spacing: 2;    text-allow-overlap: false;    text-placement: point;    text-placement-type: simple;    }    #nycha_developments_july2011::labels [zoom >= 14] [tot_pop11 > 500] {    text-name: [developmen];    text-face-name: 'DejaVu Sans Book';    text-size: 11;    text-label-position-tolerance: 10;    text-fill: #000;    text-halo-fill: #FFF;    text-halo-radius: 1;    text-dy: 0;    text-wrap-width: 160;    text-wrap-before: true;    text-character-spacing: 2;    text-allow-overlap: false;    text-placement: point;    text-placement-type: simple;    }    #nycha_developments_july2011::labels [zoom >= 15] [tot_pop11 > 100] {    text-name: [developmen];    text-face-name: 'DejaVu Sans Book';    text-size: 12;    text-label-position-tolerance: 10;    text-fill: #000;    text-halo-fill: #FFF;    text-halo-radius: 1;    text-dy: 0;    text-wrap-width: 200;    text-wrap-before: true;    text-character-spacing: 2;    text-allow-overlap: false;    text-placement: point;    text-placement-type: simple;    }    #nycha_developments_july2011::labels [zoom >= 15] [tot_pop11 > 100] {    text-name: [developmen];    text-face-name: 'DejaVu Sans Book';    text-size: 12;    text-label-position-tolerance: 10;    text-fill: #000;    text-halo-fill: #FFF;    text-halo-radius: 1;      }    #nycha_developments_july2011::labels [zoom >= 16] {    text-name: [developmen];    text-face-name: 'DejaVu Sans Book';    text-size: 12;    text-label-position-tolerance: 10;    text-fill: #000;    text-halo-fill: #FFF;    text-halo-radius: 1;    text-dy: 0;    text-wrap-width: 200;    text-wrap-before: true;    text-character-spacing: 2;    text-allow-overlap: false;    text-placement: point;    text-placement-type: simple;    } ",
+               cartocss: "#layer{    polygon-fill: #0700ff;    polygon-opacity: 0.9;    line-color: #FFF;    line-width: 0;    line-opacity: 0;  }    #nycha_developments_july2011::labels [zoom >= 12] [tot_pop11 > 4000] {    text-name: [developmen];    text-face-name: 'Lato Bold';    text-size: 10;    text-label-position-tolerance: 10;    text-fill: #11002F;    text-halo-fill: #FFF;    text-halo-radius: 1;    text-dy: 0;    text-wrap-width: 120;    text-wrap-before: true;    text-character-spacing: 1.5;    text-allow-overlap: false;    text-placement: point;    text-placement-type: simple;    }    #nycha_developments_july2011::labels [zoom >= 13] [tot_pop11 > 1000] {    text-name: [developmen];    text-face-name: 'DejaVu Sans Book';    text-size: 10;    text-label-position-tolerance: 10;    text-fill: #000;    text-halo-fill: #FFF;    text-halo-radius: 1;    text-dy: 0;    text-wrap-width: 150;    text-wrap-before: true;    text-character-spacing: 2;    text-allow-overlap: false;    text-placement: point;    text-placement-type: simple;    }    #nycha_developments_july2011::labels [zoom >= 14] [tot_pop11 > 500] {    text-name: [developmen];    text-face-name: 'DejaVu Sans Book';    text-size: 11;    text-label-position-tolerance: 10;    text-fill: #000;    text-halo-fill: #FFF;    text-halo-radius: 1;    text-dy: 0;    text-wrap-width: 160;    text-wrap-before: true;    text-character-spacing: 2;    text-allow-overlap: false;    text-placement: point;    text-placement-type: simple;    }    #nycha_developments_july2011::labels [zoom >= 15] [tot_pop11 > 100] {    text-name: [developmen];    text-face-name: 'DejaVu Sans Book';    text-size: 12;    text-label-position-tolerance: 10;    text-fill: #000;    text-halo-fill: #FFF;    text-halo-radius: 1;    text-dy: 0;    text-wrap-width: 200;    text-wrap-before: true;    text-character-spacing: 2;    text-allow-overlap: false;    text-placement: point;    text-placement-type: simple;    }    #nycha_developments_july2011::labels [zoom >= 15] [tot_pop11 > 100] {    text-name: [developmen];    text-face-name: 'DejaVu Sans Book';    text-size: 12;    text-label-position-tolerance: 10;    text-fill: #000;    text-halo-fill: #FFF;    text-halo-radius: 1;      }    #nycha_developments_july2011::labels [zoom >= 16] {    text-name: [developmen];    text-face-name: 'DejaVu Sans Book';    text-size: 12;    text-label-position-tolerance: 10;    text-fill: #000;    text-halo-fill: #FFF;    text-halo-radius: 1;    text-dy: 0;    text-wrap-width: 200;    text-wrap-before: true;    text-character-spacing: 2;    text-allow-overlap: false;    text-placement: point;    text-placement-type: simple;    } ",
                interactivity: 'cartodb_id'}]
           });
          var l_nycha = new L.LayerGroup();
@@ -767,14 +715,6 @@ var nycha = cartodb.createLayer(map_object, {
           var l_nails = new L.LayerGroup();
           nails.addTo(l_nails);
 
-  var fema = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/f27f2b54-783b-11e5-a19a-0e787de82d45/viz.json');
-          var l_fema = new L.LayerGroup();
-          fema.addTo(l_fema);
-
-  var hate_crime = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/35294f92-78f6-11e5-b2f9-0e674067d321/viz.json');
-          var l_hate_crime = new L.LayerGroup();
-          hate_crime.addTo(l_hate_crime);       
-          
   var vision_zero = cartodb.createLayer(map_object, 'https://ashron24.cartodb.com/api/v2/viz/5f2fe1a8-2f12-11e5-8b7e-0e0c41326911/viz.json');
           var l_vision_zero = new L.LayerGroup();
           vision_zero.addTo(l_vision_zero);
@@ -815,18 +755,6 @@ var nycha = cartodb.createLayer(map_object, {
           var l_wildlife_complaints = new L.LayerGroup();
           wildlife_complaints.addTo(l_wildlife_complaints);
 
-  var arches = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/20f20aac-6c38-11e5-8201-0e31c9be1b51/viz.json');
-          var l_arches = new L.LayerGroup();
-          arches.addTo(l_arches);
-
-  var neon = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/dc4d5e74-78f8-11e5-8665-0e674067d321/viz.json');
-          var l_neon = new L.LayerGroup();
-          neon.addTo(l_neon);
-
-   var cv_catchment = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/de545b74-6c36-11e5-add3-0e5db1731f59/viz.json');
-          var l_cv_catchment = new L.LayerGroup();
-          cv_catchment.addTo(l_cv_catchment);
-          
 
 //******************************************************
 //  DEMOGRAPHICS & OTHER
@@ -1104,25 +1032,6 @@ var dot_bike_2015 = cartodb.createLayer(map_object, {
           cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['street', 'fromstreet', 'tostreet', 'tf_facilit', 'facilitycl', 'allclasses'])
          });
 
-
-var rent_stabl = cartodb.createLayer(map_object, {
-                      user_name: 'chenrick',
-                      type: 'cartodb',
-                      sublayers: [{
-                        sql: "SELECT * FROM  public.all_nyc_likely_rent_stabl_merged",
-                        cartocss: "#layer {polygon-fill: #BB75DC; polygon-opacity: 0.8; line-color: #FFF;line-width: 0.1;line-opacity: 0.7;}",
-                      interactivity: "cartodb_id"}]
-                    });
-    var l_rent_stabl = new L.LayerGroup();
-    rent_stabl.addTo(l_rent_stabl)
-          .on('done', function(layer) {
-          cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['address', 'builtfar', 'landuse', 'numfloors'])
-         });
-
- var num_floors = cartodb.createLayer(map_object, 'http://pluto.cartodb.com/api/v2/viz/0cd08e80-fee5-11e2-8888-ddc4604a078e/viz.json');
-          var l_num_floors = new L.LayerGroup();
-          num_floors.addTo(l_num_floors);
-
 // initial layers
 map_object.addLayer(l_nybb);
 map_object.addLayer(l_neigh_labels);
@@ -1175,7 +1084,7 @@ map_object.addLayer(l_neigh_labels);
                             "Parks": l_dpr_parks
                             }
                 },
-                {
+                /*{
                 groupName : "Religious Groups",
                 expanded : true,
                 layers    : {
@@ -1188,18 +1097,14 @@ map_object.addLayer(l_neigh_labels);
                       "<img src='css/images/lotus-50px.png'  height='14px' width='14px'/><span class='my-layer-item-purple'> Hare Krishna Orgs</span>": l_krishna,
                       "<img src='css/images/domed_building-50px.png'  height='14px' width='14px'/> Other Religious Orgs": l_other_religion
                       }
-                },
+                },*/
                 {
                 groupName : "Outreach Work",
                 expanded : true,
                 layers    : {
-                            "<img src='css/images/star-8-16.png'  height='14px' width='14px'/>Mayoral Events</span>": l_mayoral_events,
+                            "Mayoral Events" : l_mayoral_events,
                             "CAU Events by Neighborhood": l_cau_events,
                             "CAU Volunteers by Zip": l_cau_vols_by_zip,
-                            "DOP Arches Sites": l_arches,
-                            "DOP NeON Sites": l_neon,
-                            "MOCJ Cure Violence Areas": l_cv_catchment,
-                            "Recent Hate Crimes": l_hate_crime,
                             "Wildlife Sightings": l_wildlife_complaints,
                             "SCRIE Targets": l_scrie,
                             "Rent Regulated Targets": l_rentreg,
@@ -1207,9 +1112,8 @@ map_object.addLayer(l_neigh_labels);
                             "Rezoning Areas": l_rezoning,
                             "Paid Sick Leave Business Walks": l_paid_sick,
                             "Nail Salon Day of Action Targets": l_nails,
-                            "FEMA Flood Zones": l_fema,
-                            "Vision Zero Borough Plans": l_vision_zero,
-                            "Voters by Election District": l_voters_by_ed
+                            "Vision Zero Borough Plans": l_vision_zero/*,
+                            "Voters by Election District": l_voters_by_ed*/
                             }
       },
       {
@@ -1244,7 +1148,7 @@ map_object.addLayer(l_neigh_labels);
                             "<img src='css/images/circle-16-senegalese.png' height='10px' width='10px'/> Senegalese": l_senegalese_gradu_12
                               }
       },
-      {
+      /*{
                 groupName : "DOE Language Data",
                 expanded : false,
                 layers    : {
@@ -1253,7 +1157,7 @@ map_object.addLayer(l_neigh_labels);
                           "Non-English/Spanish Plurality": l_nonengspan,
                           "Muslim Languages": l_cau_muslim
                            }
-      },
+      },*/
       {
                 groupName : "Labels",
                 expanded : false,
@@ -1262,15 +1166,7 @@ map_object.addLayer(l_neigh_labels);
                             "Gray Basemap Labels" : labels_overlay,
                             "Stamen Toner Labels" : Stamen_TonerLabels
                             }
-      },
-      /*{
-                groupName : "Other",
-                expanded : true,
-                layers    : {
-                            "Likely Rent Stabilized"       : l_rent_stabl,
-                            "Building Heights"             : l_num_floors
-                            }
-      }*/
+      }
     ];
 
     // Make the "Demographics" group exclusive (use radio inputs)
@@ -1295,23 +1191,6 @@ map_object.addLayer(l_neigh_labels);
         map_object.addControl(control);
 
             }
-  
-  
-
-
         </script>
-        
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-69039510-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-
     </body>
 </html>
