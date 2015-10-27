@@ -3,9 +3,7 @@
     <head>
         <title>
 
-            CAU Outreach Map | DRAFT | update:10/27/15
-
-            this is some meaningless text for testing purposes
+            CAU Outreach Map | DRAFT | update:10/15/15
 
         </title>
 
@@ -466,7 +464,7 @@ var nycc = cartodb.createLayer(map_object, {
                     type: 'cartodb',
                     sublayers: [{
                       sql: "SELECT * FROM nycc",
-                      cartocss: "#layer{ polygon-fill: #000000; polygon-opacity: 0; ::case {line-color: #FFFFFF; line-width: 6; line-opacity: 1;}  ::fill {line-color: #FF2900; line-width: 4; line-opacity: 1; } } #nycc::labels [zoom >= 12]{   text-name: 'CC '+[coundist];   text-face-name: 'Lato Bold';   text-size: 16;   text-label-position-tolerance: 10;  text-character-spacing: 1.3; text-fill: #FF2900;   text-halo-fill: #FFF;   text-halo-radius: 1.5;   text-dy: 0;   text-allow-overlap: false;   text-placement: interior;   text-placement-type: simple;}",
+                      cartocss: "#layer{ polygon-fill: #000000; polygon-opacity: 0; ::case {line-color: #FFFFFF; line-width: 6; line-opacity: 1;}  ::fill {line-color: #FF2900; line-width: 4; line-opacity: 1; } } #nycc::labels [zoom >= 11]{   text-name: 'CC '+[coundist];   text-face-name: 'Lato Bold';   text-size: 16;   text-label-position-tolerance: 10;  text-character-spacing: 1.3; text-fill: #FF2900;   text-halo-fill: #FFF;   text-halo-radius: 1.5;   text-dy: 0;   text-allow-overlap: false;   text-placement: interior;   text-placement-type: simple;}",
                       interactivity: "cartodb_id"}]
                   });
       var l_nycc = new L.LayerGroup();
@@ -477,7 +475,7 @@ var nycd = cartodb.createLayer(map_object, {
                     type: 'cartodb',
                     sublayers: [{
                       sql: "SELECT * FROM nycd_append",
-                      cartocss: "#layer { polygon-fill: #000000; polygon-opacity: 0; ::case {line-color: #FFFFFF; line-width: 6; line-opacity: 1;}  ::fill {line-color: #000000; line-width: 3; line-opacity: 1; }  } #nycd::labels [zoom >= 12]{   text-name: [b_name]+' '+[dist_num];   text-face-name: 'Lato Bold';   text-size: 14;   text-label-position-tolerance: 10;  text-character-spacing: 1.3; text-fill: #000;   text-halo-fill: #FFF;   text-halo-radius: 1.5;   text-dy: 10;   text-allow-overlap: false;   text-placement: interior;   text-placement-type: simple;}",
+                      cartocss: "#layer { polygon-fill: #000000; polygon-opacity: 0; ::case {line-color: #FFFFFF; line-width: 6; line-opacity: 1;}  ::fill {line-color: #000000; line-width: 3; line-opacity: 1; }  } #nycd::labels [zoom >= 11]{   text-name: [b_name]+' '+[dist_num];   text-face-name: 'Lato Bold';   text-size: 14;   text-label-position-tolerance: 10;  text-character-spacing: 1.3; text-fill: #000;   text-halo-fill: #FFF;   text-halo-radius: 1.5;   text-dy: 10;   text-allow-overlap: false;   text-placement: interior;   text-placement-type: simple;}",
                       interactivity: "cartodb_id"}]
                   });
       var l_nycd = new L.LayerGroup();
@@ -488,7 +486,7 @@ var nyss = cartodb.createLayer(map_object, {
                     type: 'cartodb',
                     sublayers: [{
                       sql: "SELECT * FROM nyss WHERE stsendist is not null",
-                      cartocss: "#layer { polygon-fill: #000000; polygon-opacity: 0; ::case {line-color: #FFFFFF; line-width: 6; line-opacity: 1;}  ::fill {line-color: #800080; line-width: 3; line-opacity: 1; }  } #nyss::labels [zoom >= 12]{   text-name: 'SS '+[stsendist];   text-face-name: 'Lato Bold';   text-size: 16;   text-label-position-tolerance: 10;  text-character-spacing: 1.3; text-fill: #800080;   text-halo-fill: #FFF;   text-halo-radius: 1.5;   text-dy: 0;   text-allow-overlap: false;   text-placement: interior;   text-placement-type: simple;}",
+                      cartocss: "#layer { polygon-fill: #000000; polygon-opacity: 0; ::case {line-color: #FFFFFF; line-width: 6; line-opacity: 1;}  ::fill {line-color: #800080; line-width: 3; line-opacity: 1; }  } #nyss::labels [zoom >= 11]{   text-name: 'SS '+[stsendist];   text-face-name: 'Lato Bold';   text-size: 16;   text-label-position-tolerance: 10;  text-character-spacing: 1.3; text-fill: #800080;   text-halo-fill: #FFF;   text-halo-radius: 1.5;   text-dy: 0;   text-allow-overlap: false;   text-placement: interior;   text-placement-type: simple;}",
                       interactivity: "cartodb_id"}]
                   });
       var l_nyss = new L.LayerGroup();
@@ -499,7 +497,7 @@ var nyad = cartodb.createLayer(map_object, {
                     type: 'cartodb',
                     sublayers: [{
                       sql: "SELECT * FROM nyad WHERE assemdist is not null",
-                      cartocss: "#layer { polygon-fill: #000; polygon-opacity: 0; ::case {line-color: #FFFFFF; line-width: 6; line-opacity: 1;}  ::fill {line-color: #191970; line-width: 3; line-opacity: 1; } } #nyad::labels [zoom >= 12]{   text-name: 'AD '+[assemdist];   text-face-name: 'Lato Bold';   text-size: 16;   text-label-position-tolerance: 10;  text-character-spacing: 1.3; text-fill: #191970;   text-halo-fill: #FFF;   text-halo-radius: 1.5;   text-dy: 0;   text-allow-overlap: false;   text-placement: interior;   text-placement-type: simple;}",
+                      cartocss: "#layer { polygon-fill: #000; polygon-opacity: 0; ::case {line-color: #FFFFFF; line-width: 6; line-opacity: 1;}  ::fill {line-color: #191970; line-width: 3; line-opacity: 1; } } #nyad::labels [zoom >= 11]{   text-name: 'AD '+[assemdist];   text-face-name: 'Lato Bold';   text-size: 16;   text-label-position-tolerance: 10;  text-character-spacing: 1.3; text-fill: #191970;   text-halo-fill: #FFF;   text-halo-radius: 1.5;   text-dy: 0;   text-allow-overlap: false;   text-placement: interior;   text-placement-type: simple;}",
                       interactivity: "cartodb_id"}]
                   });
       var l_nyad = new L.LayerGroup();
@@ -510,7 +508,7 @@ var nycg = cartodb.createLayer(map_object, {
                     type: 'cartodb',
                     sublayers: [{
                       sql: "SELECT * FROM nycg WHERE congdist is not null",
-                      cartocss: "#layer { polygon-fill: #000; polygon-opacity: 0;  ::case {line-color: #FFFFFF; line-width: 6; line-opacity: 1;}  ::fill {line-color: #B22222; line-width: 3; line-opacity: 1; } } #nycg::labels [zoom >= 12]{   text-name: 'CG '+[congdist];   text-face-name: 'Lato Bold';   text-size: 16;   text-label-position-tolerance: 10;  text-character-spacing: 1.3; text-fill: #B22222;   text-halo-fill: #FFF;   text-halo-radius: 1.5;   text-dy: 10;   text-allow-overlap: false;   text-placement: interior;   text-placement-type: simple;}",
+                      cartocss: "#layer { polygon-fill: #000; polygon-opacity: 0;  ::case {line-color: #FFFFFF; line-width: 6; line-opacity: 1;}  ::fill {line-color: #B22222; line-width: 3; line-opacity: 1; } } #nycg::labels [zoom >= 11]{   text-name: 'CG '+[congdist];   text-face-name: 'Lato Bold';   text-size: 16;   text-label-position-tolerance: 10;  text-character-spacing: 1.3; text-fill: #B22222;   text-halo-fill: #FFF;   text-halo-radius: 1.5;   text-dy: 10;   text-allow-overlap: false;   text-placement: interior;   text-placement-type: simple;}",
                       interactivity: "cartodb_id"}]
                   });
       var l_nycg = new L.LayerGroup();
@@ -613,7 +611,7 @@ var fac = cartodb.createLayer(map_object, {
     var l_fac = new L.LayerGroup();
     fac.addTo(l_fac)
           .on('done', function(layer) {
-          cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['facname', 'facaddress', 'capacity', 'capacity_t', 'agency_ope', 'agency_ove'])
+          cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['facname', 'facaddress', 'facility_t', 'group_type', 'subgroup_t', 'capacity', 'capacity_t', 'agency_ope', 'agency_ove'])
          });
 
 
@@ -647,38 +645,12 @@ var muslim = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/ash
     var l_muslim = new L.LayerGroup();
     muslim.addTo(l_muslim);
 
-var buddhist = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/2d984334-7903-11e5-8ed6-0e3ff518bd15/viz.json');
-    var l_buddhist = new L.LayerGroup();
-    buddhist.addTo(l_buddhist);
-
-var hindu = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/ac362694-7902-11e5-98ad-0ea31932ec1d/viz.json');
-    var l_hindu = new L.LayerGroup();
-    hindu.addTo(l_hindu);
-
-var sikh = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/b9496cdc-7903-11e5-98ad-0ea31932ec1d/viz.json');
-    var l_sikh = new L.LayerGroup();
-    sikh.addTo(l_sikh);
-
-var krishna = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/79e174cc-7903-11e5-a7e3-0ecd1babdde5/viz.json');
-    var l_krishna = new L.LayerGroup();
-    krishna.addTo(l_krishna);
-
-var other_religion = cartodb.createLayer(map_object, 'https://nycdoitt.cartodb.com/u/asherross/api/v2/viz/9b248cfe-7904-11e5-8f63-0e31c9be1b51/viz.json');
-    var l_other_religion = new L.LayerGroup();
-    other_religion.addTo(l_other_religion);    
-
-
-
-/* old minor religions layers
-
-
-
 var buddhist = cartodb.createLayer(map_object, {
                     user_name: 'ashron2224',
                     type: 'cartodb',
                     sublayers: [{
-                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15",
-                      cartocss: "#layer [zoom >=10][religion='Buddhist'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119270050-px-orange-dharma_wheel_2.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15 [zoom >= 11][religion='Buddhist'] {    marker-width: 8; } #haroldclergy3_11_15 [zoom >= 12][religion='Buddhist'] {    marker-width: 12; } #haroldclergy3_11_15 [zoom >= 13][religion='Buddhist'] {    marker-width: 18; } #haroldclergy3_11_15 [zoom >= 14][religion='Buddhist'] {    marker-width: 24; } #haroldclergy3_11_15 [zoom >= 15][religion='Buddhist'] {    marker-width: 30; } ",
+                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15_merge",
+                      cartocss: "#layer [zoom >=10][religion='Buddhist'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119270050-px-orange-dharma_wheel_2.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15_merge [zoom >= 11][religion='Buddhist'] {    marker-width: 8; } #haroldclergy3_11_15_merge [zoom >= 12][religion='Buddhist'] {    marker-width: 12; } #haroldclergy3_11_15_merge [zoom >= 13][religion='Buddhist'] {    marker-width: 18; } #haroldclergy3_11_15_merge [zoom >= 14][religion='Buddhist'] {    marker-width: 24; } #haroldclergy3_11_15_merge [zoom >= 15][religion='Buddhist'] {    marker-width: 30; } ",
                       interactivity: "cartodb_id"}]
                   });
     var l_buddhist = new L.LayerGroup();
@@ -688,8 +660,8 @@ var hindu = cartodb.createLayer(map_object, {
                     user_name: 'ashron2224',
                     type: 'cartodb',
                     sublayers: [{
-                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15",
-                      cartocss: "#layer [zoom >= 10][religion='Hindu'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119272950-pixel-Om.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15 [zoom >= 11][religion='Hindu'] {    marker-width: 8; } #haroldclergy3_11_15 [zoom >= 12][religion='Hindu'] {    marker-width: 12; } #haroldclergy3_11_15 [zoom >= 13][religion='Hindu'] {    marker-width: 18; } #haroldclergy3_11_15 [zoom >= 14][religion='Hindu'] {    marker-width: 24; } #haroldclergy3_11_15 [zoom >= 15] [religion='Hindu'] {  marker-width: 30; } ",
+                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15_merge",
+                      cartocss: "#layer [zoom >= 10][religion='Hindu'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119272950-pixel-Om.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15_merge [zoom >= 11][religion='Hindu'] {    marker-width: 8; } #haroldclergy3_11_15_merge [zoom >= 12][religion='Hindu'] {    marker-width: 12; } #haroldclergy3_11_15_merge [zoom >= 13][religion='Hindu'] {    marker-width: 18; } #haroldclergy3_11_15_merge [zoom >= 14][religion='Hindu'] {    marker-width: 24; } #haroldclergy3_11_15_merge [zoom >= 15] [religion='Hindu'] {  marker-width: 30; } ",
                       interactivity: "cartodb_id"}]
                   });
     var l_hindu = new L.LayerGroup();
@@ -699,8 +671,8 @@ var sikh = cartodb.createLayer(map_object, {
                     user_name: 'ashron2224',
                     type: 'cartodb',
                     sublayers: [{
-                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15",
-                      cartocss: "#layer [zoom >= 10][religion='Sikh'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119271550-px-yellow-Khanda.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }   #haroldclergy3_11_15 [zoom >= 11][religion='Sikh'] {    marker-width: 8; } #haroldclergy3_11_15 [zoom >= 12][religion='Sikh'] {    marker-width: 12; } #haroldclergy3_11_15 [zoom >= 13][religion='Sikh'] {    marker-width: 18; } #haroldclergy3_11_15 [zoom >= 14][religion='Sikh'] {    marker-width: 24; } #haroldclergy3_11_15 [zoom >= 15][religion='Sikh'] {    marker-width: 30; } ",
+                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15_merge",
+                      cartocss: "#layer [zoom >= 10][religion='Sikh'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031119271550-px-yellow-Khanda.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }   #haroldclergy3_11_15_merge [zoom >= 11][religion='Sikh'] {    marker-width: 8; } #haroldclergy3_11_15_merge [zoom >= 12][religion='Sikh'] {    marker-width: 12; } #haroldclergy3_11_15_merge [zoom >= 13][religion='Sikh'] {    marker-width: 18; } #haroldclergy3_11_15_merge [zoom >= 14][religion='Sikh'] {    marker-width: 24; } #haroldclergy3_11_15_merge [zoom >= 15][religion='Sikh'] {    marker-width: 30; } ",
                       interactivity: "cartodb_id"}]
                   });
     var l_sikh = new L.LayerGroup();
@@ -710,8 +682,8 @@ var krishna = cartodb.createLayer(map_object, {
                     user_name: 'ashron2224',
                     type: 'cartodb',
                     sublayers: [{
-                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15",
-                      cartocss: "#layer [zoom >= 10][religion='Hare Krishna'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/20150707172351lotus50px.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15  #haroldclergy3_11_15 [zoom >= 11][religion='Hare Krishna'] {    marker-width: 8; } #haroldclergy3_11_15 [zoom >= 12][religion='Hare Krishna'] {    marker-width: 12; } #haroldclergy3_11_15 [zoom >= 13][religion='Hare Krishna'] {    marker-width: 18; } #haroldclergy3_11_15 [zoom >= 14][religion='Hare Krishna'] {    marker-width: 24; } #haroldclergy3_11_15 [zoom >= 15][religion='Hare Krishna'] {    marker-width: 30; } ",
+                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15_merge",
+                      cartocss: "#layer [zoom >= 10][religion='Hare Krishna'] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/20150707172351lotus50px.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 1;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 5;    marker-allow-overlap: true; }  #haroldclergy3_11_15_merge  #haroldclergy3_11_15_merge [zoom >= 11][religion='Hare Krishna'] {    marker-width: 8; } #haroldclergy3_11_15_merge [zoom >= 12][religion='Hare Krishna'] {    marker-width: 12; } #haroldclergy3_11_15_merge [zoom >= 13][religion='Hare Krishna'] {    marker-width: 18; } #haroldclergy3_11_15_merge [zoom >= 14][religion='Hare Krishna'] {    marker-width: 24; } #haroldclergy3_11_15_merge [zoom >= 15][religion='Hare Krishna'] {    marker-width: 30; } ",
                       interactivity: "cartodb_id"}]
                   });
     var l_krishna = new L.LayerGroup();
@@ -721,16 +693,12 @@ var other_religion = cartodb.createLayer(map_object, {
                     user_name: 'ashron2224',
                     type: 'cartodb',
                     sublayers: [{
-                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15",
-                      cartocss: "#layer [zoom >= 10][religion=''] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031200010650-px-domed_building.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 5;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 1;    marker-allow-overlap: true; }  #haroldclergy3_11_15 [zoom >= 11][religion=''] {    marker-width: 8; } #haroldclergy3_11_15 [zoom >= 12][religion=''] {    marker-width: 12; } #haroldclergy3_11_15 [zoom >= 13][religion=''] {    marker-width: 18; } #haroldclergy3_11_15 [zoom >= 14][religion=''] {    marker-width: 24; } #haroldclergy3_11_15 [zoom >= 15][religion=''] {    marker-width: 30; } ",
+                      sql: "SELECT cartodb_id, the_geom_webmercator, religion FROM haroldclergy3_11_15_merge",
+                      cartocss: "#layer [zoom >= 10][religion=''] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/ashron24/assets/2015031200010650-px-domed_building.png);   marker-fill-opacity: 0.9;    marker-line-color: #FFF;    marker-line-width: 5;    marker-line-opacity: 1;    marker-placement: point;    marker-type: ellipse;    marker-width: 1;    marker-allow-overlap: true; }  #haroldclergy3_11_15_merge [zoom >= 11][religion=''] {    marker-width: 8; } #haroldclergy3_11_15_merge [zoom >= 12][religion=''] {    marker-width: 12; } #haroldclergy3_11_15_merge [zoom >= 13][religion=''] {    marker-width: 18; } #haroldclergy3_11_15_merge [zoom >= 14][religion=''] {    marker-width: 24; } #haroldclergy3_11_15_merge [zoom >= 15][religion=''] {    marker-width: 30; } ",
                       interactivity: "cartodb_id"}]
                   });
     var l_other_religion = new L.LayerGroup();
     other_religion.addTo(l_other_religion);
-
-
-*/
-
 
 var nycha = cartodb.createLayer(map_object, {
             user_name: 'andrewmartini',
@@ -1195,13 +1163,13 @@ map_object.addLayer(l_neigh_labels);
                 groupName : "Outreach Work",
                 expanded : true,
                 layers    : {
-                            "<img src='css/images/star-8-16.png'  height='14px' width='14px'/>Mayoral Events</span>": l_mayoral_events,
+                            "Mayoral Events" : l_mayoral_events,
                             "CAU Events by Neighborhood": l_cau_events,
                             "CAU Volunteers by Zip": l_cau_vols_by_zip,
                             "DOP Arches Sites": l_arches,
                             "DOP NeON Sites": l_neon,
-                            "MOCJ Cure Violence Areas": l_cv_catchment,
-                            "Recent Hate Crimes": l_hate_crime,
+                            "CV Catchment Areas": l_cv_catchment,
+                            "Hate Crimes": l_hate_crime,
                             "Wildlife Sightings": l_wildlife_complaints,
                             "SCRIE Targets": l_scrie,
                             "Rent Regulated Targets": l_rentreg,
