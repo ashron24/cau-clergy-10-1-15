@@ -222,7 +222,7 @@
   </ul>
 
 </div>
-<div class='legend-source'><!--Source: 2014(?) <a href="https://www.census.gov/programs-surveys/acs/">American Community Survey</a>--></div>
+<div class='legend-source'>Source: 2013 <a href="https://www.census.gov/programs-surveys/acs/">American Community Survey</a></div>
 
 <hr style="background:#c0c0c0; border:0; height:2px" />
 
@@ -238,7 +238,7 @@
       <li><span style='background:#1a9850;'></span><span class="rotate-text">$244,000</li>
     </ul>
   </div>
-     <div class='legend-source'>Source: 2014 ACS? </div>
+     <div class='legend-source'>Source: 2013 ACS </div>
 
 <hr style="background:#c0c0c0; border:0; height:2px" />
 
@@ -254,7 +254,7 @@
       <li><span style='background:#ff4d4d;'></span><span class="rotate-text"> 50+ % </li>
     </ul>
   </div>
-     <div class='legend-source'>Source: ?? </div>
+     <div class='legend-source'>Source:  2012 ACS </div>
 
 <hr style="background:#c0c0c0; border:0; height:2px" />
 
@@ -885,72 +885,72 @@ var lang_plurality = cartodb.createLayer(map_object, {
     none.addTo(l_none); */
 
 var percent_nhblack_choro = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT cartodb_id, totalpop, nhblack, the_geom, the_geom_webmercator, (nhblack/totalpop)*100 AS percent_black FROM tract13 WHERE totalpop > 100",
                         cartocss: "#layer{  polygon-fill: #fff;   polygon-opacity: 0;   line-color: #FFF;   line-width: 0;   line-opacity: 0; } #layer [ percent_black >= 10] {    polygon-fill: #FFFFB2;    polygon-opacity: 0.8;   line-color: #FFF;   line-width: 0.1;   line-opacity: 1; } #layer [ percent_black >= 20] {    polygon-fill: #FED976; } #layer [ percent_black >= 35] {    polygon-fill: #FEB24C; } #layer [ percent_black >= 50] {    polygon-fill: #FD8D3C; } #layer [ percent_black >= 65] {    polygon-fill: #FC4E2A; } #layer [ percent_black >= 80] {    polygon-fill: #E31A1C; } #layer [ percent_black >= 90] {    polygon-fill: #B10026; }",
                       interactivity: "cartodb_id"}]
                     });
-    var l_percent_nhblack_choro_12 = new L.LayerGroup();
-    percent_nhblack_choro.addTo(l_percent_nhblack_choro_12)
+    var l_percent_nhblack_choro = new L.LayerGroup();
+    percent_nhblack_choro.addTo(l_percent_nhblack_choro)
         .on('done', function(layer) {
         cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['percent_black', 'nhblack', 'totalpop', 'cartodb_id'])
         });
 
 
 var percent_nhwhite_choro = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT cartodb_id, totalpop, nhwhite, the_geom, the_geom_webmercator, (nhwhite/totalpop)*100 as percent_white FROM tract13 where totalpop > 100",
                         cartocss: "#layer{  polygon-fill: #fff;   polygon-opacity: 0;   line-color: #FFF;   line-width: 0;   line-opacity: 0; } #layer [ percent_white >= 10] {    polygon-fill: #FFFFB2;    polygon-opacity: 0.8;   line-color: #FFF;   line-width: 0.1;   line-opacity: 1; } #layer [ percent_white >= 20] {    polygon-fill: #FED976; } #layer [ percent_white >= 35] {    polygon-fill: #FEB24C; } #layer [ percent_white >= 50] {    polygon-fill: #FD8D3C; } #layer [ percent_white >= 65] {    polygon-fill: #FC4E2A; } #layer [ percent_white >= 80] {    polygon-fill: #E31A1C; } #layer [ percent_white >= 90] {    polygon-fill: #B10026; }",
                       interactivity: "cartodb_id"}]
                     });
-    var l_percent_nhwhite_choro_12 = new L.LayerGroup();
-    percent_nhwhite_choro.addTo(l_percent_nhwhite_choro_12)
+    var l_percent_nhwhite_choro = new L.LayerGroup();
+    percent_nhwhite_choro.addTo(l_percent_nhwhite_choro)
           .on('done', function(layer) {
           cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['percent_white', 'nhwhite', 'totalpop','cartodb_id'])
          });
 
 var percent_foreignborn_choro = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT totalpop, foreignbor, cartodb_id, the_geom, the_geom_webmercator, (foreignbor/totalpop)*100 AS percent_fb_12 FROM tract13 where totalpop > 100",
                         cartocss: "#layer{  polygon-fill: #fff;   polygon-opacity: 0;   line-color: #FFF;   line-width: 0;   line-opacity: 0; } #layer [ percent_fb_12 >= 10] {    polygon-fill: #FFFFB2;    polygon-opacity: 0.8;   line-color: #FFF;   line-width: 0.1;   line-opacity: 1; } #layer [ percent_fb_12 >= 20] {    polygon-fill: #FED976; } #layer [ percent_fb_12 >= 35] {    polygon-fill: #FEB24C; } #layer [ percent_fb_12 >= 50] {    polygon-fill: #FD8D3C; } #layer [ percent_fb_12 >= 65] {    polygon-fill: #FC4E2A; } #layer [ percent_fb_12 >= 80] {    polygon-fill: #E31A1C; } #layer [ percent_fb_12 >= 90] {    polygon-fill: #B10026; }",
                       interactivity: "cartodb_id"}]
                     });
-    var l_percent_foreignborn_choro_12 = new L.LayerGroup();
-    percent_foreignborn_choro.addTo(l_percent_foreignborn_choro_12)
+    var l_percent_foreignborn_choro = new L.LayerGroup();
+    percent_foreignborn_choro.addTo(l_percent_foreignborn_choro)
           .on('done', function(layer) {
           cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['percent_fb_12', 'foreignbor', 'totalpop', 'cartodb_id'])
          });
 
 var percent_nhasian_choro = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT totalpop, nhasian, cartodb_id, the_geom_webmercator, (nhasian/totalpop)*100 as percent_asian FROM tract13 where totalpop > 100",
                         cartocss: "#layer{  polygon-fill: #fff;   polygon-opacity: 0;   line-color: #FFF;   line-width: 0;   line-opacity: 0; } #layer [ percent_asian >= 10] {    polygon-fill: #FFFFB2;    polygon-opacity: 0.8;   line-color: #FFF;   line-width: 0.1;   line-opacity: 1; } #layer [ percent_asian >= 20] {    polygon-fill: #FED976; } #layer [ percent_asian >= 35] {    polygon-fill: #FEB24C; } #layer [ percent_asian >= 50] {    polygon-fill: #FD8D3C; } #layer [ percent_asian >= 65] {    polygon-fill: #FC4E2A; } #layer [ percent_asian >= 80] {    polygon-fill: #E31A1C; } #layer [ percent_asian >= 90] {    polygon-fill: #B10026; }",
                       interactivity: "cartodb_id"}]
                     });
-    var l_percent_nhasian_choro_12 = new L.LayerGroup();
-    percent_nhasian_choro.addTo(l_percent_nhasian_choro_12)
+    var l_percent_nhasian_choro = new L.LayerGroup();
+    percent_nhasian_choro.addTo(l_percent_nhasian_choro)
           .on('done', function(layer) {
           cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['percent_asian', 'nhasian' ,'totalpop', 'cartodb_id'])
          });
 
 var percent_hispanic_choro = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT cartodb_id, hispanic, totalpop, the_geom_webmercator, (hispanic/totalpop)*100 AS percent_hispanic FROM tract13 where totalpop > 100",
                         cartocss: "#layer{  polygon-fill: #fff;   polygon-opacity: 0;   line-color: #FFF;   line-width: 0;   line-opacity: 0; } #layer [ percent_hispanic >= 10] {    polygon-fill: #FFFfb2;    polygon-opacity: 0.8;   line-color: #FFF;   line-width: 0.1;   line-opacity: 1; } #layer [ percent_hispanic >= 20] {    polygon-fill: #FED976; } #layer [ percent_hispanic >= 35] {    polygon-fill: #FEB24C; } #layer [ percent_hispanic >= 50] {    polygon-fill: #FD8D3C; } #layer [ percent_hispanic >= 65] {    polygon-fill: #FC4E2A; } #layer [ percent_hispanic >= 80] {    polygon-fill: #E31A1C; } #layer [ percent_hispanic >= 90] {    polygon-fill: #B10026; }",
                       interactivity: "cartodb_id"}]
                     });
-    var l_percent_hispanic_choro_12 = new L.LayerGroup();
-    percent_hispanic_choro.addTo(l_percent_hispanic_choro_12)
+    var l_percent_hispanic_choro = new L.LayerGroup();
+    percent_hispanic_choro.addTo(l_percent_hispanic_choro)
           .on('done', function(layer) {
            cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['percent_hispanic','hispanic', 'totalpop', 'cartodb_id'])
         });
@@ -959,26 +959,26 @@ var median_inc_to_rent = cartodb.createLayer(map_object, {
                       user_name: 'andrewmartini',
                       type: 'cartodb',
                       sublayers: [{
-                        sql: "SELECT cartodb_id, medrenttoh, medianhhin, the_geom_webmercator FROM tract13 WHERE Totalpop > 250",
+                        sql: "SELECT cartodb_id, medrenttoh, medianhhin, the_geom_webmercator FROM tract12 WHERE Totalpop > 250",
                         cartocss: "#layer{polygon-fill: #0080ff;polygon-opacity: 0.8;line-color: #FFF;line-width: 0.5;line-opacity: 1;}#layer [ medrenttoh <= 50] {polygon-fill: #ff4d4d;}#layer [ medrenttoh <= 44.6] {polygon-fill: #ff7a7a;}#layer [ medrenttoh <= 40.1] {polygon-fill: #ffa6a6;}#layer [ medrenttoh <= 35.6] {polygon-fill: #fff2cc;}#layer [ medrenttoh <= 31.1] {polygon-fill: #7fbfff;}#layer [ medrenttoh <= 26.6] {polygon-fill: #40a0ff;}#layer [ medrenttoh <= 22.1] {polygon-fill: #0080ff;}",
                         interactivity: "cartodb_id"}]
                     });
-    var l_median_inc_to_rent_12 = new L.LayerGroup();
-    median_inc_to_rent.addTo(l_median_inc_to_rent_12)
+    var l_median_inc_to_rent = new L.LayerGroup();
+    median_inc_to_rent.addTo(l_median_inc_to_rent)
           .on('done', function(layer) {
            cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['medrenttoh','medianhhin', 'cartodb_id'])
         });
 
 var median_inc_choro = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT cartodb_id, the_geom_webmercator, medianhhin FROM tract13 WHERE Totalpop > 250",
                         cartocss: "#layer{ polygon-fill: #d73027;   polygon-opacity: 0.8;   line-color: #FFF;   line-width: 0.1;   line-opacity: 1; } #layer [ medianhhin <= 243622] { polygon-fill: #1a9850; } #layer [ medianhhin <= 84240] { polygon-fill: #8cce8a; } #layer [ medianhhin <= 67394] { polygon-fill: #d2ecb4; } #layer [ medianhhin <= 57176] { polygon-fill: #fff2cc; } #layer [ medianhhin <= 48159] { polygon-fill: #fed6b0; } #layer [ medianhhin <= 39538] { polygon-fill: #f79272; } #layer [ medianhhin <= 30106] { polygon-fill: #d73027; }",
                       interactivity: "cartodb_id"}]
                     });
-    var l_median_inc_choro_12  = new L.LayerGroup();
-    median_inc_choro.addTo(l_median_inc_choro_12)
+    var l_median_inc_choro  = new L.LayerGroup();
+    median_inc_choro.addTo(l_median_inc_choro)
            .on('done', function(layer) {
            cdb.vis.Vis.addInfowindow(map_object, layer.getSubLayer(0), ['medianhhin', 'cartodb_id'])
         });
@@ -1005,7 +1005,7 @@ var senegalese_color = "marker-fill: #0d697f; marker-line-color: #0d697f; ";
 
 // ethnicity layers go below this line
 var bangladesh_gradu = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT the_geom, the_geom_webmercator, cartodb_id, fbbanglade, bangladesh FROM tract13 WHERE bangladesh > 5",
@@ -1019,7 +1019,7 @@ var bangladesh_gradu = cartodb.createLayer(map_object, {
         });
 
 var pakistani_gradu = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT the_geom, the_geom_webmercator, cartodb_id, fbpakistan, pakistani FROM tract13 WHERE pakistani > 5",
@@ -1033,7 +1033,7 @@ var pakistani_gradu = cartodb.createLayer(map_object, {
         });
 
 var asianindia_gradu = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT the_geom, the_geom_webmercator, cartodb_id, asianindia, fbindia FROM tract13 WHERE asianindia > 5",
@@ -1047,7 +1047,7 @@ var asianindia_gradu = cartodb.createLayer(map_object, {
          });
 
 var arab_gradu = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT the_geom, the_geom_webmercator, cartodb_id, arab, fbarab FROM tract13 WHERE arab > 5",
@@ -1061,7 +1061,7 @@ var arab_gradu = cartodb.createLayer(map_object, {
          });
 
 var turkish_gradu = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT the_geom, the_geom_webmercator, cartodb_id, turkish  FROM tract13 WHERE turkish > 5",
@@ -1075,7 +1075,7 @@ var turkish_gradu = cartodb.createLayer(map_object, {
          });
 
 var senegalese_gradu = cartodb.createLayer(map_object, {
-                      user_name: 'andrewmartini',
+                      user_name: 'ashron24',
                       type: 'cartodb',
                       sublayers: [{
                         sql: "SELECT the_geom, the_geom_webmercator, cartodb_id, senegalese, fbwafrica FROM tract13 WHERE senegalese > 5",
@@ -1217,25 +1217,25 @@ map_object.addLayer(l_neigh_labels);
                 expanded : true,
                 layers    : {
                            // "None": l_none,
-                            "% Hispanic": l_percent_hispanic_choro_12,
-                            "% White": l_percent_nhwhite_choro_12,
-                            "% Black": l_percent_nhblack_choro_12,
-                            "% Asian": l_percent_nhasian_choro_12,
+                            "% Hispanic": l_percent_hispanic_choro,
+                            "% White": l_percent_nhwhite_choro,
+                            "% Black": l_percent_nhblack_choro,
+                            "% Asian": l_percent_nhasian_choro,
                          //   }
      // },
      // {
        //         groupName : "Income",
          //       expanded : true,
            //     layers    : {
-                            "Median HH Income": l_median_inc_choro_12,
-                            "Median Inc to Rent": l_median_inc_to_rent_12,
+                            "Median HH Income": l_median_inc_choro,
+                            "Median Inc to Rent": l_median_inc_to_rent,
                         //  }
      // },
      // {
        //         groupName : "Foreign Born",
          //       expanded : true,
            //     layers    : {
-                            "% Foreign Born": l_percent_foreignborn_choro_12,
+                            "% Foreign Born": l_percent_foreignborn_choro,
                             "<img src='css/images/circle-16-bangladesh.png' height='10px' width='10px'/> Bangladeshi": l_bangladesh_gradu,
                             "<img src='css/images/circle-16-pakistani.png' height='10px' width='10px'/> Pakistani": l_pakistani_gradu,
                             "<img src='css/images/circle-16-asianindia.png' height='10px' width='10px'/> Indian": l_asianindia_gradu,
